@@ -1,0 +1,14 @@
+[Unit]
+Description=Forgejo Agent Onboarding Gateway
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/aleph/forgejo-agent-door
+ExecStart=/usr/bin/python3 /home/aleph/forgejo-agent-door/server.py
+Restart=always
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target
